@@ -278,7 +278,7 @@ class _Header extends StatelessWidget {
             height: 64,
             child: Row(
               children: [
-                Image.asset('assets/images/logo.png', height: 48),
+                Image.asset('images/logo.png', height: 48),
                 const Spacer(),
                 if (isWide(context)) ...[
                   _link('Início', onInicio, active: true),
@@ -372,13 +372,19 @@ class _Hero extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(28),
               child: Image.asset(
-                'assets/images/burger.jpg',
+                'images/burger.jpg',
                 height: 300,
                 fit: BoxFit.cover,
               ),
             ),
           ),
           const Positioned(right: -6, bottom: -20, child: _PhoneMock()),
+          if (wide)
+            Positioned(
+              top: -45,
+              left: -1100,
+              child: Image.asset('images/logo.png', height: 420),
+            ),
           if (wide)
             Positioned(
               top: 0,
@@ -563,7 +569,7 @@ class _Categories extends StatelessWidget {
                   child: Column(
                     children: [
                       Image.asset(
-                        'assets/images/$asset.jpg',
+                        'images/$asset.jpg',
                         height: 84,
                         width: double.infinity,
                         fit: BoxFit.cover,
@@ -802,7 +808,7 @@ class _CtaBanner extends StatelessWidget {
                   Expanded(child: text),
                   _OrderButton(onPressed: onOrder),
                   const SizedBox(width: 24),
-                  Image.asset('assets/images/logo.png', height: 110),
+                  Image.asset('images/logo.png', height: 110),
                 ],
               )
             : Column(
@@ -845,7 +851,7 @@ class _Footer extends StatelessWidget {
           spacing: 20,
           runSpacing: 14,
           children: [
-            Image.asset('assets/images/logo.png', height: 44),
+            Image.asset('images/logo.png', height: 44),
             const Text(
               'Seu pedido, nossa missão!',
               style: TextStyle(color: Color(0xFFE8D6C2), fontSize: 13),
